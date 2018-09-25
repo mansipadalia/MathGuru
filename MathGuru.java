@@ -36,17 +36,6 @@ public class MathGuru {
                 switch(inChoice)
                 {
                     case 1: result = exponential(n);
-                        int x = 2;
-                        for (var i = 1; i < n; i++) {
-                            if (n == 0) {
-                                x = 1;
-                            } else if (n == 1) {
-                                x = 2;
-                            } else {
-                                x = x * 2;
-                            }
-                            result = x;
-                        }
                         System.out.println("2^n for n: "+n+", is: "+result);
                         break;
                     case 2: result = factorial(n);
@@ -67,7 +56,19 @@ public class MathGuru {
 
     public static int exponential(int n)
     {
-        return 1;
+        int x = 2;
+        for (var i = 1; i < n; i++) {
+            if (n == 0) {
+                x = 1;
+            } 
+            else if (n == 1) {
+                x = 2;
+            } 
+            else {
+                x = x * 2;
+            }
+        }
+        return x;
     }
 
     public static int factorial(int n)
