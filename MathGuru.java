@@ -4,15 +4,12 @@ import java.lang.ArithmeticException;
 import java.util.InputMismatchException;
 
 public class MathGuru {
-
     public static void main(String[] args) {
-
         int inChoice=0;
         int n=0;
         int flag=1;
         int result = 0;
         Scanner in = new Scanner(System.in);
-
         try {
         while (flag == 1) {
             System.out.println("Welcome to MathGuru!!!");
@@ -20,9 +17,7 @@ public class MathGuru {
             System.out.println("1. Exponential (2^n)");
             System.out.println("2. Factorial (n!)");
             System.out.println("3. Fibonacci (nth element)");
-
             System.out.print("Enter your choice: ");
-
                 inChoice = in.nextInt();
                 System.out.print("You entered: ");
                 System.out.println(inChoice);
@@ -45,7 +40,7 @@ public class MathGuru {
                                 result = factorial(n);
                                 System.out.println("n! for n: " + n + "!, is: " + result);
                             } catch (ArithmeticException e) {
-                                System.err.println(e + " : Invalid number");
+                                System.err.println("Invalid number");
                             }
                             break;
 
@@ -57,20 +52,31 @@ public class MathGuru {
                             System.out.println("Choose valid option.");
                     }
                 }
-
                 System.out.print("Try again - (1 for Yes/ anything else for No): ");
                 flag = in.nextInt();
             }
 
         }
         catch (InputMismatchException exception) {
-            System.err.println(exception + " : Please enter a valid input");
+            System.err.println("Please enter a valid input");
         }
     }
 
     public static int exponential(int n)
     {
-        return 1;
+              int x = 2;
+        for (var i = 1; i < n; i++) {
+            if (n == 0) {
+                x = 1;
+            } 
+            else if (n == 1) {
+                x = 2;
+            } 
+            else {
+                x = x * 2;
+            }
+        }
+        return x;
     }
 
     public static int factorial(int n) {
@@ -85,10 +91,8 @@ public class MathGuru {
                 }
             }
             return result;
-
-
-
     }
+
 
     public static int fibonacci(int n)
     {
