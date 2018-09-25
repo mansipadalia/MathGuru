@@ -31,7 +31,7 @@ public class Test {
                             System.out.print("You entered: ");
                             System.out.println(n);
                             result = exponential(n);
-                            System.out.println("2^n for n: " + n + ", is: " + result);
+                            System.out.println("2^n for n: " + n + " is: " + result);
                             break;
                         case 2:
                             try {
@@ -40,7 +40,7 @@ public class Test {
                                 System.out.print("You entered: ");
                                 System.out.println(n);
                                 result = factorial(n);
-                                System.out.println("n! for n: " + n + "!, is: " + result);
+                                System.out.println("n! for n: " + n + "! is: " + result);
                             } catch (ArithmeticException e) {
                                 System.err.println("Invalid number");
                             }
@@ -52,7 +52,7 @@ public class Test {
                             System.out.print("You entered: ");
                             System.out.println(n);
                             result = fibonacci(n);
-                            System.out.println("nth element in fibonacci series for n: " + n + ", is: " + result);
+                            System.out.println("nth element in fibonacci series for n: " + n + " is: " + result);
                             break;
                         default:
                             System.out.println("Choose valid option.");
