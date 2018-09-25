@@ -78,7 +78,26 @@ public class MathGuru {
 
     public static int fibonacci(int n)
     {
-        return 1;
+        int fibOfn = 0, fibOf0 = 0, fibOf1 = 1, i;
+	
+		if (n < 1)
+		{
+			return fibOfn;
+		}
+		
+		if (n == 1)
+		{
+			return fibOf1;
+		}
+		
+		for (i = 2; i <= n; i++)
+		{
+			fibOfn = fibOf0 + fibOf1;
+			fibOf0 = fibOf1;
+			fibOf1 = fibOfn;
+		}
+		
+		return fibOfn;
     }
 
 }
