@@ -1,9 +1,9 @@
-import java.io.IOException;
+//import java.io.IOException;
 import java.util.Scanner;
 import java.lang.ArithmeticException;
 import java.util.InputMismatchException;
 
-public class MathGuru {
+public class Test {
     public static void main(String[] args) {
         int inChoice=0;
         int n=0;
@@ -11,32 +11,34 @@ public class MathGuru {
         int result = 0;
         Scanner in = new Scanner(System.in);
         try {
-        while (flag == 1) {
-            System.out.println("Welcome to MathGuru!!!");
-            System.out.println("We support the following 3 mathematical operations:");
-            System.out.println("1. Exponential (2^n)");
-            System.out.println("2. Factorial (n!)");
-            System.out.println("3. Fibonacci (nth element)");
-            System.out.print("Enter your choice: ");
+            while (flag == 1) {
+                System.out.println("Welcome to MathGuru!!!");
+                System.out.println("We support the following 3 mathematical operations:");
+                System.out.println("1. Exponential (2^n)");
+                System.out.println("2. Factorial (n!)");
+                System.out.println("3. Fibonacci (nth element)");
+                System.out.print("Enter your choice: ");
                 inChoice = in.nextInt();
                 System.out.print("You entered: ");
                 System.out.println(inChoice);
-
-                System.out.print("Enter the number n for which you want to compute the selected mathematical operation: ");
-                n = in.nextInt();
-                System.out.print("You entered: ");
-                System.out.println(n);
-
                 if (n > 20) {
                     System.out.println("Please select a value of n as less than 20.");
                 } else {
                     switch (inChoice) {
                         case 1:
+                            System.out.print("Enter the number n for which you want to compute the selected mathematical operation: ");
+                            n = in.nextInt();
+                            System.out.print("You entered: ");
+                            System.out.println(n);
                             result = exponential(n);
                             System.out.println("2^n for n: " + n + ", is: " + result);
                             break;
                         case 2:
                             try {
+                                System.out.print("Enter the number n for which you want to compute the selected mathematical operation: ");
+                                n = in.nextInt();
+                                System.out.print("You entered: ");
+                                System.out.println(n);
                                 result = factorial(n);
                                 System.out.println("n! for n: " + n + "!, is: " + result);
                             } catch (ArithmeticException e) {
@@ -45,6 +47,10 @@ public class MathGuru {
                             break;
 
                         case 3:
+                            System.out.print("Enter the number n for which you want to compute the selected mathematical operation: ");
+                            n = in.nextInt();
+                            System.out.print("You entered: ");
+                            System.out.println(n);
                             result = fibonacci(n);
                             System.out.println("nth element in fibonacci series for n: " + n + ", is: " + result);
                             break;
@@ -60,18 +66,19 @@ public class MathGuru {
         catch (InputMismatchException exception) {
             System.err.println("Please enter a valid input");
         }
+
     }
 
     public static int exponential(int n)
     {
-              int x = 2;
+        int x = 2;
         for (var i = 1; i < n; i++) {
             if (n == 0) {
                 x = 1;
-            } 
+            }
             else if (n == 1) {
                 x = 2;
-            } 
+            }
             else {
                 x = x * 2;
             }
@@ -82,15 +89,15 @@ public class MathGuru {
     public static int factorial(int n) {
         int result = 1;
 
-            if (n < 0) {
-                throw new ArithmeticException();
+        if (n < 0) {
+            throw new ArithmeticException();
+        }
+        else {
+            for (int i = 2; i <= n; i++) {
+                result = result * i;
             }
-            else {
-                for (int i = 2; i <= n; i++) {
-                    result = result * i;
-                }
-            }
-            return result;
+        }
+        return result;
     }
 
 
