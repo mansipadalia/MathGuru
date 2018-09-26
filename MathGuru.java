@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MathGuru {
@@ -14,16 +15,24 @@ public class MathGuru {
 			System.out.println("1. Exponential (2^n)");
 			System.out.println("2. Factorial (n!)");
 			System.out.println("3. Fibonacci (nth element)");
-			System.out.print("Enter your choice: ");
-			inChoice = in.nextInt();
+			try {
+				System.out.print("Enter your choice: ");
+				inChoice = in.nextInt();
+			} catch (InputMismatchException e) {
+				System.out.print("Enter an integer");
+			}
 			System.out.print("You entered: ");
 			System.out.println(inChoice);
-			System.out.print(
-					"Enter the number n for which you want to compute the selected mathematical operation: ");
-			n = in.nextInt();
+			try {
+				System.out.print(
+						"Enter the number n for which you want to compute the selected mathematical operation: ");
+				n = in.nextInt();
+			} catch (InputMismatchException e) {
+				System.out.print("Enter an integer");
+			}
 			System.out.print("You entered: ");
 			System.out.println(n);
-			
+
 			if (n > 20 || n < 0) {
 				System.out.println("Please select a value of n as greater than 0 and less than 20.");
 			} else {
@@ -52,8 +61,9 @@ public class MathGuru {
 	}
 
 	public static int exponential(int n) {
-		if (n == 0) return 1;
-		
+		if (n == 0)
+			return 1;
+
 		int x = 2;
 		for (int i = 1; i < n; i++) {
 			if (n == 1) {
