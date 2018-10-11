@@ -1,6 +1,6 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
+//tedting
 public class MathGuru {
 	public static void main(String[] args) {
 		int inChoice = 0;
